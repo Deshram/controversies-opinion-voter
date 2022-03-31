@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Propaganda Voter</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      .prop-title{
+        background-color: lightgray;
+        font-size: 20px;
+      }  
+    </style>
+  </head>
+  <body>
+    <div class="container" style="width: 650px;">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="text-center">Opinion Voter</h1>
+          <hr/>
+          <br/>
+          <!-- <div id="loader">
+            <p class="text-center">Loading...</p>
+          </div> -->
+          <!-- <div id="content" style="display: none;"> -->
+          <div id="content">  
+            
+            <h3>Live Controversies</h3>
+            <hr/>
+            <div id="prop">
+
+              <div class="prop-title" onclick="showContent('prop1-content')"> 1. CAA-NRC 2020 (govt policy)</div>
+              <div id="prop1-content", style="display: none;visibility: hidden;">
+                <form onSubmit="App.castVote(0); return false;">
+                    <label for="optionSelect">If this policy matters you, do you agree with the policy</label>
+                    &nbsp;
+                    <select class="optionSelect">
+                        <option value=1>Agree</option>
+                        <option value=2>Disagree</option>>
+                    </select>
+                    &nbsp;    
+                    <button type="submit" class="btn btn-primary">Vote</button>
+                </form>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Opinion</th>
+                      <th scope="col">Votes</th>
+                    </tr>
+                  </thead>
+                  <tbody class="propResults">
+                      <tr><td>Agree</td></tr>
+                      <tr><td>Disagree</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <br>
+              <div class="prop-title" onclick="showContent('prop2-content')"> 2. Farm bills 2021 (govt policy)</div>
+              <div id="prop2-content", style="display: none;visibility: hidden;">
+                <form onSubmit="App.castVote(1); return false;">
+                    <label for="optionSelect">If this policy matters you, do you agree with the policy</label>
+                    &nbsp;
+                    <select class="optionSelect">
+                        <option value='1'>Agree</option>
+                        <option value='2'>Disagree</option>>
+                    </select>
+                    &nbsp;    
+                    <button type="submit" class="btn btn-primary">Vote</button>
+                </form>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Opinion</th>
+                      <th scope="col">Votes</th>
+                    </tr>
+                  </thead>
+                  <tbody class="propResults">
+                      <tr><td>Agree</td></tr>
+                      <tr><td>Disagree</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <br>
+              <div class="prop-title" onclick="showContent('prop3-content')"> 3. The Kashmir Files 2022 (Movie)</div>
+              <div id="prop3-content", style="display: none;visibility: hidden;">
+                <form onSubmit="App.castVote(2); return false;">
+                    <label for="optionSelect">This movie was inappropriate politically/religiously/factually ?</label>
+                    &nbsp;
+                    <select class="optionSelect">
+                        <option value='1'>Agree</option>
+                        <option value='2'>Disagre</option>>
+                    </select>
+                    &nbsp;    
+                    <button type="submit" class="btn btn-primary">Vote</button>
+                </form>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Opinion</th>
+                      <th scope="col">Votes</th>
+                    </tr>
+                  </thead>
+                  <tbody class="propResults">
+                      <tr><td>Agree</td></tr>
+                      <tr><td>Disagree</td></tr>
+                  </tbody>
+                </table>
+              </div>    
+            </div>
+            <br>
+            <p id="accountAddress" class="text-center"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script> -->
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+      function showContent(id){
+        var content = document.getElementById(id)
+        if (content.style.visibility=='hidden'){
+          content.style.visibility ='visible'
+          content.style.display = 'inline'
+        } else {
+          content.style.visibility='hidden'
+          content.style.display='none'
+        }
+      }
+    </script>
+  </body>
+</html>
